@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { UserItem } from "../UserItem/UserItem";
-import s from "./Table.module.css";
+
 import { AppDispatch } from "../../redux/store";
 import { fetchUsers } from "../../redux/thunks";
-import { Loader } from "../Loader/Loader";
 import { clearFilters, setFilter, User } from "../../redux/usersSlice";
 import { selectError, selectFilteredUsers, selectFilters, selectLoading } from "../../redux/selectors";
 import { UserFilters } from "../../redux/usersSlice";
+
+import { UserItem } from "../UserItem/UserItem";
+import { Loader } from "../Loader/Loader";
 import { ModalWindow } from "../ModalWindow/ModalWindow";
+
+import s from "./Table.module.css";
+
 
 export const Table = () => {
   const dispatch = useDispatch<AppDispatch>();

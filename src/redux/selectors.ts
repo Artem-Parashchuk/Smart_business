@@ -3,6 +3,8 @@ import { createSelector } from 'reselect';
 
 export const selectUsers = (state: RootState) => state.users.users;
 export const selectFilters = (state: RootState) => state.users.filters;
+export const selectLoading = (state: RootState) => state.users.loading;
+export const selectError = (state: RootState) => state.users.error;
 export const selectFilteredUsers = createSelector(
   [selectUsers, selectFilters],
   (users, filters) => {
@@ -16,5 +18,3 @@ export const selectFilteredUsers = createSelector(
     });
   }
 );
-export const selectLoading = (state: RootState) => state.users.loading;
-export const selectError = (state: RootState) => state.users.error;

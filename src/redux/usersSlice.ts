@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { fetchUsers } from './thunks';
-// import { User } from '../components/UserItem/UserItem';
 
 export interface User {
   id: number;
@@ -77,5 +76,5 @@ const usersSlice = createSlice({
   }
 })
 
-export const {setFilter, clearFilters} = usersSlice.actions
+export const { setFilter, clearFilters } = usersSlice.actions
 export default usersSlice.reducer;

@@ -22,7 +22,7 @@ export const ModalWindow: React.FC<UserModalProps> = ({ user, onClose }) => {
   if (!user) return null;
 
   const handleClickOutside = (event: React.MouseEvent<HTMLDivElement>) => {
-    // Закриваємо модальне вікно, якщо користувач натискає за межами контенту
+    // Modal window close when user press outside content
     if (event.target === event.currentTarget) {
       onClose();
     }
@@ -51,7 +51,8 @@ export const ModalWindow: React.FC<UserModalProps> = ({ user, onClose }) => {
           <strong>Email:</strong> {user.email}
         </p>
         <p>
-          <strong>Phone:</strong> {<td>{user.phone.split(" ")[0].replaceAll('.' , '-')}</td>}
+          <strong>Phone:</strong>{" "}
+          {<td>{user.phone.split(" ")[0].replaceAll(".", "-")}</td>}
         </p>
         <h3 className={s.subtitle}>Address:</h3>
         <p>
