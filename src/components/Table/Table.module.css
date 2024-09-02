@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .main {
   margin: 50px 0;
   flex-grow: 1;
@@ -8,6 +14,12 @@
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
+}
+
+.table_container {
+  width: 90%;
+  margin: 0 auto;
+  overflow-x: auto; 
 }
 
 .input {
@@ -23,8 +35,8 @@
 }
 
 table {
-  width: 85%;
-  margin: 0 auto;
+  width: 100%; 
+  min-width: 600px; 
   border-collapse: collapse;
 }
 
@@ -34,14 +46,19 @@ table thead tr {
   background-color: #00bf80;
 }
 
+table td, table th {
+  max-width: 200px; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  padding: 8px;
+}
+
 table thead tr td {
-  padding: 10px;
   text-align: center;
   font-size: 20px;
 }
 
 table tbody tr td {
-  padding: 10px;
   border: 1px solid #e8e9eb;
   text-align: center;
   font-size: 18px;
@@ -78,23 +95,27 @@ table tbody tr:hover {
   cursor: pointer;
 }
 
-.not_found {
-  padding: 0;
-}
-
 /* Media Query for Tablets (landscape) */
-@media (max-width: 1024px) {
+@media (max-width: 1023.98px) {
   .content {
     padding: 0 15px;
   }
-
+  .table_container {
+    width: 95%;
+  }
   .input {
+    width: 100%;;
     font-size: 16px;
-    padding: 8px;
+    padding: 6px;
   }
 
   table {
-    width: 90%;
+    width: 100%; 
+    min-width: 0; 
+  }
+
+  table td, table th {
+    max-width: 150px; 
   }
 
   table thead tr td {
@@ -109,18 +130,25 @@ table tbody tr:hover {
 }
 
 /* Media Query for Tablets (portrait) and smartphones */
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .content {
     padding: 0 10px;
   }
-
+  .table_container {
+    width: 100%;
+  }
   .input {
     font-size: 14px;
     padding: 6px;
   }
 
   table {
-    width: 100%;
+    width: 100%; 
+    min-width: 0; 
+  }
+
+  table td, table th {
+    max-width: 120px; 
   }
 
   table thead tr td {

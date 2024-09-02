@@ -1,20 +1,8 @@
+import { User } from "../../redux/usersSlice";
 import s from "./ModalWindow.module.css";
 
 interface UserModalProps {
-  user: {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    phone: string;
-    address: {
-      street: string;
-      city: string;
-    };
-    company: {
-      name: string;
-    };
-  } | null;
+  user: User | null;
   onClose: () => void;
 }
 
@@ -51,8 +39,8 @@ export const ModalWindow: React.FC<UserModalProps> = ({ user, onClose }) => {
           <strong>Email:</strong> {user.email}
         </p>
         <p>
-          <strong>Phone:</strong>{" "}
-          {<td>{user.phone.split(" ")[0].replaceAll(".", "-")}</td>}
+          <strong>Phone: </strong>
+          {user.phone.split(" ")[0].replaceAll(".", "-")}
         </p>
         <h3 className={s.subtitle}>Address:</h3>
         <p>
@@ -63,7 +51,6 @@ export const ModalWindow: React.FC<UserModalProps> = ({ user, onClose }) => {
         </p>
         <h3 className={s.subtitle}>Place of work:</h3>
         <p>
-          {" "}
           <strong>Company:</strong> {user.company.name}
         </p>
       </div>
