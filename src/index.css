@@ -50,8 +50,4 @@ body {
   margin: 0;
   padding: 0;
 }
-@media (max-width: 1023.98px) {
-  body {
-    width: fit-content;
-  }
-}
+
