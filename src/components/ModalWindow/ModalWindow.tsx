@@ -28,7 +28,7 @@ export const ModalWindow: React.FC<UserModalProps> = ({ user, onClose }) => {
         >
           &times;
         </button>
-        <h2 className={s.title}>User Details</h2>
+        <h2 className={s.title}>Personal Information</h2>
         <p>
           <strong>Name:</strong> {user.name}
         </p>
