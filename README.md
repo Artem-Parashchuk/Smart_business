@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# Junior Frontend Developer Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This assignment involves creating a React application using TypeScript and Redux Toolkit. The application fetches user data from the JSONPlaceholder API and displays it in a table with advanced filtering capabilities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+1. **Fetch All Users**
+   - Retrieve a list of all users from the endpoint `GET /users` using JSONPlaceholder.
+   
+2. **Display Users in a Table**
+   - Implement a responsive table with columns: `Name`, `Username`, `Email`, and `Phone`.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+3. **Implement Advanced Filtering**
+   - Add search input fields for each column.
+   - Filter table data dynamically based on user input in real-time.
 
-- Configure the top-level `parserOptions` property like this:
+4. **State Management**
+   - Utilize Redux Toolkit to manage application state, including user data and filter states.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+5. **Type Safety**
+   - Apply TypeScript comprehensively across the application to ensure type safety and reduce runtime errors.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+6. **Design and Styling**
+   - Design the table and input fields to be user-friendly and visually appealing.
+   - Aim for a clean and effective user interface.
+  
+## Components
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Table
+- **Description**: Displays the user data in a table with filtering options.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### UserItem
+- **Description**: Represents a single user row in the table.
+
+### Loader
+- **Description**: Shows a loading spinner while data is being fetched.
+
+## Redux Setup
+
+### Users Slice (`src/redux/usersSlice.ts`)
+- **Description**: Manages user data and filter states.
+
+### Thunks (`src/redux/thunks.ts`)
+- **Description**: Handles asynchronous actions to fetch user data from the API.
+
+### Store Configuration (`src/redux/store.ts`)
+- **Description**: Sets up the Redux store and combines reducers.
+
+## Styles
+
+### Table.module.css
+- **Description**: Contains styles for the table and its components.
+
+### UserItem.module.css
+- **Description**: Styles for individual user rows.
+
+### Loader.module.css
+- **Description**: Styles for the loading spinner.
