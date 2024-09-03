@@ -15,23 +15,16 @@
   padding: 0 20px;
   box-sizing: border-box;
 }
+.error_message {
+  text-align: center;
+  font-size: 18px;
+  color: red;
+}
 
 .table_container {
   width: 90%;
   margin: 0 auto;
   overflow-x: auto; 
-}
-
-.input {
-  font-size: 18px;
-  padding: 10px;
-  border: 1px solid transparent;
-  outline: transparent;
-}
-
-.input:active,
-.input:focus {
-  border: 1px solid #0f6df6;
 }
 
 table {
