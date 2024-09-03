@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from './redux/store'
-import { fetchUsers } from './redux/thunks'
+import { fetchUsersThunk } from './redux/users/thunks'
 
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
@@ -13,7 +13,7 @@ function App() {
   const dispatch = useDispatch<AppDispatch>()
 
   useEffect(() => {
-    dispatch(fetchUsers())
+    dispatch(fetchUsersThunk())
   },[dispatch])
   
   return (
