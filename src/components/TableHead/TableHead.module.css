@@ -1,0 +1,25 @@
+.input {
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid transparent;
+  outline: transparent;
+}
+
+.input:active,
+.input:focus {
+  border: 1px solid #0f6df6;
+}
+
+@media (max-width: 1023.98px) {
+  .input {
+    width: 100%;
+    font-size: 16px;
+    padding: 6px;
+  }
+}
+@media (max-width: 767.98px) {
+  .input {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
