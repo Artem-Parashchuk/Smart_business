@@ -1,9 +1,16 @@
-## Junior Frontend Developer Assignment
+
 
 ## Overview
 
 This assignment involves creating a React application using TypeScript and Redux Toolkit. The application fetches user data from the JSONPlaceholder API and displays it in a table with advanced filtering capabilities.
 
+## Step start project
+1. Clone repository 
+- `git clone https://github.com/Artem-Parashchuk/smart-business.git`
+2. Install all dependencies
+- `npm install`
+3. Start project
+- `npm run dev`
 ## Requirements:
 
 1. **Fetch All Users**
