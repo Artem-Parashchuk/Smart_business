@@ -1,33 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { fetchUsers } from './thunks';
 
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-  address: {
-    street: string;
-    city: string;
-  };
-  company: {
-    name: string;
-  }
-}
-export interface UserFilters {
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-}
+import { fetchUsersThunk } from './thunks';
+
+import { User } from '../../interfaces/User';
+import { UserFilters } from '../../interfaces/UserFilters';
+
 
 interface UserState {
   users: User[];
   loading: boolean
   error: string | null;
   filters: UserFilters;
-
 }
 
 const initialState: UserState = {
@@ -56,20 +39,20 @@ const usersSlice = createSlice({
         email: '',
         phone: '',
       }
-    }
+    },
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchUsers.pending, (state) => {
+      .addCase(fetchUsersThunk.pending, (state) => {
         state.loading = true
         state.error = null
       })
-      .addCase(fetchUsers.fulfilled, (state, action: PayloadAction<User[]>) => {
+      .addCase(fetchUsersThunk.fulfilled, (state, action: PayloadAction<User[]>) => {
         state.loading = false
         state.error = null
         state.users = action.payload
       })
-      .addCase(fetchUsers.rejected, (state, action) => {
+      .addCase(fetchUsersThunk.rejected, (state, action) => {
         state.loading = false
         state.error = action.error.message || 'Something went wrong'
       })
