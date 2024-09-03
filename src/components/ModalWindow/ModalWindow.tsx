@@ -1,4 +1,4 @@
-import { User } from "../../redux/usersSlice";
+import { User } from "../../interfaces/User";
 import s from "./ModalWindow.module.css";
 
 interface UserModalProps {

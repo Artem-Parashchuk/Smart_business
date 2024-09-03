@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { AppDispatch } from "../../redux/store";
-import { fetchUsers } from "../../redux/thunks";
-import { clearFilters, setFilter, User } from "../../redux/usersSlice";
+import { clearFilters, setFilter} from "../../redux/users/usersSlice";
 import {
   selectError,
   selectFilteredUsers,
   selectLoading,
-} from "../../redux/selectors";
-import { UserFilters } from "../../redux/usersSlice";
+} from "../../redux/users/selectors";
 
 import { UserItem } from "../UserItem/UserItem";
 import { Loader } from "../Loader/Loader";
 import { ModalWindow } from "../ModalWindow/ModalWindow";
-
-import s from "./Table.module.css";
 import { TableHead } from "../TableHead/TableHead";
+
+import { User } from "../../interfaces/User";
+import { UserFilters } from "../../interfaces/UserFilters";
+import s from "./Table.module.css";
 
 export const Table = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -26,12 +26,6 @@ export const Table = () => {
 
   const [selectedUser, setSelectedUser] = useState<null | User>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    if (filteredUsers.length === 0) {
-      dispatch(fetchUsers());
-    }
-  }, [dispatch, filteredUsers.length]);
 
   const handleFilterChange = (field: keyof UserFilters, value: string) => {
     dispatch(setFilter({ field, value }));
@@ -96,7 +90,7 @@ export const Table = () => {
                       onClick={handleClearFilters}
                       className={s.btn_remove}
                     >
-                      Click to remove inputs
+                      Click to remove search
                     </button>
                   </td>
                 </tr>

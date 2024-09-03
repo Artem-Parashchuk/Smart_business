@@ -3,6 +3,8 @@
   padding: 10px;
   border: 1px solid transparent;
   outline: transparent;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 .input:active,
